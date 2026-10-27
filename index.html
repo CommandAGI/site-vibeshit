@@ -6,13 +6,17 @@
 <title>VibeShit — swag that exists because someone wanted it</title>
 <meta name="description" content="Promotional merchandise and giveaways — hats, trinkets and threads — made on demand through a vertical partner for each product line. No warehouse, no landfill pile, no minimum of 5,000.">
 <meta property="og:title" content="VibeShit — swag that exists because someone wanted it">
-<meta property="og:description" content="Hats, trinkets and threads for your team, made when you order them. One clean order sheet, three vertical partners.">
+<meta property="og:description" content="Hats, trinkets and threads for your team, made when you order them. One order sheet, three vertical partners.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vibeshit.co/">
+<meta property="og:image" content="https://vibeshit.co/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://cloudflareinsights.com; img-src 'self' data:; style-src 'self'; script-src 'self' https://static.cloudflareinsights.com; base-uri 'none'; form-action 'none'">
-<meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f1114" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#e6ff58">
 <link rel="icon" href="mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="touch-icon.png">
+<link rel="preload" href="fonts/bowlby-one.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/space-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <link rel="alternate" hreflang="en" href="https://vibeshit.co/">
 <link rel="alternate" hreflang="es" href="https://vibeshit.co/es/">
@@ -21,223 +25,218 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <a class="brand" href="./" aria-label="VibeShit home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 10h4l4 10 4-10h4l-6.6 15h-2.8L8 10Z" fill="var(--paper)"/></svg>
-      Vibe<em>Shit</em>
-    </a>
-    <nav class="nav" aria-label="Main">
-      <a href="#lines">Product lines</a>
-      <a href="#how">How it works</a>
-      <a href="#landfill">The landfill problem</a>
-      <a class="cta" href="#build">Build an order</a>
-    </nav>
-    <button class="lang-btn" type="button" id="lang-button" aria-haspopup="dialog" aria-label="Language: English">
-      <span class="lang-btn__glyph" aria-hidden="true">A<span>/</span><span lang="zh-Hans">文</span></span>
-    </button>
-  </div>
+<header class="tape">
+  <a class="tape__brand" href="./" aria-label="VibeShit home"><img src="wordmark.svg" alt="VibeShit" width="201" height="44"></a>
+  <nav class="tape__nav" aria-label="Main">
+    <a href="#lines"><b>01</b> The table</a>
+    <a href="#how"><b>02</b> How a run runs</a>
+    <a href="#landfill"><b>03</b> Why the name</a>
+    <a class="tape__go" href="#build"><b>04</b> Start a run</a>
+  </nav>
+  <button class="lang-btn" type="button" id="lang-button" aria-haspopup="dialog" aria-label="Language: English">
+    <span class="lang-btn__glyph" aria-hidden="true">A<span>/</span><span lang="zh-Hans">文</span></span>
+  </button>
 </header>
 
 <dialog id="lang-dialog" aria-label="Language">
   <ul class="lang-list">
-    <li><a href="./" aria-current="true"><span>English</span><small>en</small></a></li>
-    <li><a href="es/"><span>Español</span><small>es</small></a></li>
-    <li><a href="zh-Hans/"><span lang="zh-Hans">简体中文</span><small>zh-Hans</small></a></li>
+    <li><a href="./" aria-current="true"><span lang="en">English</span><small>en</small></a></li>
+    <li><a href="es/" hreflang="es"><span lang="es">Español</span><small>es</small></a></li>
+    <li><a href="zh-Hans/" hreflang="zh-Hans"><span lang="zh-Hans">简体中文</span><small>zh-Hans</small></a></li>
   </ul>
 </dialog>
 
 <main id="main">
 
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Promotional merchandise, made on demand</p>
-        <h1>Swag that exists because someone <em>wanted it</em>.</h1>
-        <p class="lede">Hats, trinkets and threads for your team — made when you order them, not warehoused until the next rebrand. Three vertical partners, one clean order sheet.</p>
-        <div class="actions">
-          <a class="button button--signal" href="#build">Build an order</a>
-          <a class="button button--ghost" href="#how">How it works</a>
-        </div>
-      </div>
-      <aside class="sheet-preview" aria-label="Example order sheet">
-        <header>
-          <h3>Order sheet · Run 214</h3>
-          <span class="tag">Example</span>
-        </header>
-        <div class="sheet-line"><span>Structured cap × 48</span><span>headwear</span></div>
-        <div class="sheet-line"><span>Enamel pin × 250</span><span>trinkets</span></div>
-        <div class="sheet-line"><span>Heavy tee × 96</span><span>threads</span></div>
-        <footer><span>3 partners · 0 warehouses</span><span>ships in 14–21 days</span></footer>
-      </aside>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="eyebrow">Promotional merchandise, made on demand</p>
+      <h1 id="hero-title"><span class="h1-line h1-line--0">Swag that</span> <span class="h1-line h1-line--1">exists because</span> <span class="h1-line h1-line--2">someone</span> <span class="h1-line h1-line--3"><em>wanted it.</em></span></h1>
+      <p class="lede">Hats, trinkets and threads. Made when you order them, by three shops that each do one thing. No pile.</p>
+      <p class="actions"><a class="button button--go" href="#build">Start a run</a> <a class="button button--tape" href="#how">How a run runs</a></p>
+    </div>
+    <div class="pile" id="pile" aria-hidden="true" data-words="{&quot;min&quot;:&quot;from 12 pieces&quot;,&quot;warehouse&quot;:&quot;0 warehouses&quot;,&quot;proof&quot;:&quot;proof in 24 h&quot;,&quot;after&quot;:&quot;made after you order&quot;}"></div>
+    <div class="setlist">
+      <h2 class="setlist__title" id="pile-label">On the table</h2>
+      <ul aria-labelledby="pile-label">
+        <li><button type="button" data-pick="cap">Structured cap<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="beanie">Rib beanie<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="pin">Soft enamel pin<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="keyring">Die-cut keyring<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="stickers">Sticker pack<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="tee">Heavy tee<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="hoodie">Boxy hoodie<span aria-hidden="true">→</span></button></li>
+      </ul>
+      <p class="setlist__hint">Drag the pile. Tap a piece to start a run with it. Drawings, not photos.</p>
     </div>
   </section>
 
-  <div class="facts" aria-label="What we are">
-    <div class="wrap">
-      <div class="fact"><strong>12</strong>pieces, the smallest run</div>
-      <div class="fact"><strong>3</strong>vertical partners, one per line</div>
-      <div class="fact"><strong>0</strong>warehouses holding your stock</div>
-      <div class="fact"><strong>24h</strong>for your art proof</div>
+  <section id="lines" class="lines" aria-labelledby="lines-title">
+    <h2 id="lines-title"><span>Three lines.</span> <span>Three shops that only do that one thing.</span></h2>
+    <p class="lines__lede">You order once. Each shop makes only what was ordered and ships it direct.</p>
+    <div class="tags">
+        <article class="tag tag--headwear">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>Headwear</h3>
+          <p class="tag__shop">An embroidery shop</p>
+          <ul>
+            <li><span>Structured cap</span><span>min 12</span></li>
+            <li><span>Rib beanie</span><span>min 12</span></li>
+          </ul>
+          <p class="tag__days">14–18 days · made to order</p>
+        </article>
+        <article class="tag tag--trinkets">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>Trinkets</h3>
+          <p class="tag__shop">A soft-enamel studio</p>
+          <ul>
+            <li><span>Soft enamel pin</span><span>min 25</span></li>
+            <li><span>Die-cut keyring</span><span>min 25</span></li>
+            <li><span>Sticker pack</span><span>min 50</span></li>
+          </ul>
+          <p class="tag__days">10–24 days · made to order</p>
+        </article>
+        <article class="tag tag--threads">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>Threads</h3>
+          <p class="tag__shop">A cut-and-sew mill</p>
+          <ul>
+            <li><span>Heavy tee</span><span>min 12</span></li>
+            <li><span>Boxy hoodie</span><span>min 12</span></li>
+          </ul>
+          <p class="tag__days">10–16 days · made to order</p>
+        </article>
     </div>
-  </div>
+  </section>
 
-  <section id="lines">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Three lines. Three partners who only do that one thing.</h2>
-        <p>Every line is produced by a specialist we buy from directly — embroidery, soft enamel, cut-and-sew. You order once; each partner makes only what was ordered and ships it direct.</p>
-      </div>
-      <div class="cards" id="cards">
-        <noscript><p class="lede">Headwear, trinkets and threads — caps, beanies, enamel pins, keyrings, stickers, tees and hoodies. Enable JavaScript to build an order sheet, or write to hello@vibeshit.co.</p></noscript>
+  <section id="how" class="how" aria-labelledby="how-title">
+    <div class="how__copy">
+      <h2 id="how-title">How a run runs</h2>
+      <p>Four passes, like a four-ink print. Nothing is made before you approve the proof.</p>
+      <ol class="passes">
+        <li class="pass pass--chartreuse"><h3>Pick the pieces</h3><p>Piece, colourway, where the art goes, how many.</p></li>
+        <li class="pass pass--magenta"><h3>We route the lines</h3><p>Each line goes to its own shop with the size run and the art.</p></li>
+        <li class="pass pass--cyan"><h3>Proof in a day</h3><p>A proof for every decorated piece. You say yes or you say change it.</p></li>
+        <li class="pass pass--ink"><h3>Made, then shipped</h3><p>Boxes leave the shop. Not a warehouse of ours.</p></li>
+      </ol>
+    </div>
+    <div class="print" role="img" aria-label="A four-ink print building up as you scroll">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <g class="ink ink--chartreuse"><path d="M60 120c20-70 120-90 160-40 50-40 140-10 120 70 60 20 50 120-10 130 10 70-80 90-120 50-40 50-140 20-130-50-60-20-70-110-20-160Z"/></g>
+        <g class="ink ink--magenta"><path d="M206 52 120 214h68l-26 128 116-178h-74l46-112Z"/></g>
+        <g class="ink ink--cyan"><circle cx="300" cy="300" r="46"/><circle cx="96" cy="96" r="22"/><circle cx="330" cy="92" r="14"/></g>
+        <g class="ink ink--ink"><path d="M40 360c40-30 80 30 120 0s80 30 120 0 80 30 100 10" fill="none" stroke-width="12" stroke-linecap="round"/><path d="M28 28h30M43 13v30M342 28h30M357 13v30M28 372h30M43 357v30M342 372h30M357 357v30" fill="none" stroke-width="3"/></g>
+      </svg>
+    </div>
+  </section>
+
+  <section id="landfill" class="landfill" aria-labelledby="landfill-title">
+    <p class="eyebrow">Why the name</p>
+    <h2 id="landfill-title"><span>The joke is the name.</span> <span>The problem is the pile.</span></h2>
+    <p class="landfill__p">Most swag is ordered in bulk, handed out once and worn for a week. Then a drawer. Then a bin. We named the company after the bin, so nobody has to pretend.</p>
+    <ul class="stamps">
+      <li class="stamp stamp--0"><b>Made after you order</b><span>No stock waits for a conference that got cancelled.</span></li>
+      <li class="stamp stamp--1"><b>From 12 pieces</b><span>A pilot run beats a pallet you regret.</span></li>
+      <li class="stamp stamp--2"><b>Worth wearing twice</b><span>Real embroidery, soft enamel, ring-spun cotton.</span></li>
+      <li class="stamp stamp--3"><b>Paper, not plastic</b><span>Paper wraps and cartons by default.</span></li>
+      <li class="stamp stamp--4"><b>Send it back</b><span>Unworn pieces go back to the shop for remaking.</span></li>
+    </ul>
+    <p class="landfill__note">We do not claim to be carbon-neutral. We claim to make fewer things nobody wants.</p>
+  </section>
+
+  <section id="build" class="build" aria-labelledby="build-title">
+    <header class="build__head">
+      <h2 id="build-title">Start a run</h2>
+      <p>This page quotes nothing and charges nothing. It builds the sheet you send us. The run stays on this device until you copy it.</p>
+    </header>
+    <div class="builder">
+      <form class="ticket" id="builder-form" novalidate>
+        <p class="ticket__label">Job ticket</p>
+        <fieldset class="stage" id="stage-piece"><legend><b>01</b> Piece</legend><div class="chips chips--pieces" id="item-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>02</b> Colourway</legend><div class="chips chips--drops" id="color-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>03</b> Placement</legend><div class="chips" id="place-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>04</b> Quantity</legend><div class="chips chips--qty" id="qty-chips"></div><p class="tally" id="tally" title="one stroke = one minimum run"></p></fieldset>
+        <div class="stage"><label class="stage__label" for="art-note"><b>05</b> Art note</label><textarea id="art-note" rows="3" maxlength="240" placeholder="Your logo, one ink. The art file follows the sheet."></textarea></div>
+        <p class="ticket__actions"><button class="button button--go" type="submit" id="add-button">Add to the run</button> <button class="button button--tape" type="button" id="clear-button">Start over</button></p>
+        <p class="saved" id="saved" role="status" aria-live="polite"></p>
+      </form>
+
+      <figure class="proof" aria-labelledby="proof-caption">
+        <p class="proof__label">Proof · illustrative drawing · not approved</p>
+        <div class="proof__art" id="proof"></div>
+        <figcaption id="proof-caption"></figcaption>
+        <p class="proof__note" id="proof-note"></p>
+      </figure>
+
+      <div class="sheet" id="sheet" aria-live="polite">
+        <header><h3>Your run</h3><span class="sheet__tag" id="sheet-tag">Empty</span></header>
+        <ul class="sheet-lines" id="sheet-lines"></ul>
+        <p class="sheet__empty" id="sheet-empty">Nothing on the ticket yet. Add a piece and it lands here.</p>
+        <dl class="totals" id="totals" hidden>
+          <div><dt>Pieces</dt><dd id="total-pieces">0</dd></div>
+          <div><dt>Shops</dt><dd id="total-partners">0</dd></div>
+          <div><dt>Production window</dt><dd id="total-window">–</dd></div>
+          <div><dt>Price</dt><dd>Quoted per run</dd></div>
+        </dl>
+        <p class="sheet__actions">
+          <button class="button button--tape" type="button" id="copy-button">Copy the sheet</button>
+          <a class="button button--go" id="email-button" href="mailto:hello@vibeshit.co">Email the sheet</a>
+          <button class="button button--tape" type="button" id="link-button">Copy a link</button>
+        </p>
+        <p class="saved" id="sheet-status" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
 
-  <section id="how">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>How an order runs</h2>
-        <p>No sales call required. The order sheet is the whole conversation.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><h3>Pick the pieces</h3><p>Build a sheet from the three lines. Colourways, quantity, where your art goes.</p></div>
-        <div class="step"><h3>We route the lines</h3><p>Each line goes to its own partner with the size run and the art file attached.</p></div>
-        <div class="step"><h3>Proof in a day</h3><p>A digital proof comes back for every decorated piece. Nothing is made before you say yes.</p></div>
-        <div class="step"><h3>Made, then shipped</h3><p>Production starts after the proof. Boxes leave the partner, not a warehouse of ours.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="landfill" class="landfill">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Why the name</p>
-        <h2>The joke is the name. The problem is the pile.</h2>
-        <p>Most branded merchandise is ordered in bulk, handed out once, and worn for a week. The rest goes to a drawer, then a bin — and the bin is the part the industry does not put on the invoice. We named the company after it so nobody has to pretend otherwise.</p>
-        <p class="note">We are not claiming to be carbon-neutral. We are claiming to make fewer things nobody wants.</p>
-      </div>
-      <div>
-        <ul>
-          <li><b>Made after you order</b>No stock sits in a warehouse waiting for a conference that got cancelled.</li>
-          <li><b>Small minimums</b>From 12 pieces. A pilot run beats a pallet you regret.</li>
-          <li><b>Things people keep</b>Pieces worth wearing twice: real embroidery, soft enamel, ring-spun cotton.</li>
-          <li><b>No plastic where it can be avoided</b>Paper wraps and cartons by default; the partner says what it can do for your line.</li>
-          <li><b>Send it back, we take it</b>Unworn pieces from a run come back to the partner for remaking, not to a landfill.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="build">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Build an order sheet</h2>
-        <p>This page quotes nothing and charges nothing: it builds the sheet you send us. Your run stays on this device until you copy it.</p>
-      </div>
-      <div class="builder">
-        <form class="panel" id="builder-form" novalidate>
-          <h3>Add a piece</h3>
-          <p class="hint">Pick a line, a colourway and a quantity. The sheet works out the run.</p>
-
-          <div class="field">
-            <span class="label" id="item-label">Piece</span>
-            <div class="chips" id="item-chips" role="group" aria-labelledby="item-label"></div>
-          </div>
-
-          <div class="field">
-            <span class="label" id="color-label">Colourway</span>
-            <div class="swatches" id="color-chips" role="group" aria-labelledby="color-label"></div>
-          </div>
-
-          <div class="field">
-            <span class="label" id="qty-label">Quantity</span>
-            <div class="chips" id="qty-chips" role="group" aria-labelledby="qty-label"></div>
-          </div>
-
-          <div class="field">
-            <label class="label" for="art-note">Art and placement</label>
-            <textarea id="art-note" placeholder="Your logo, front left breast, one ink; art file sent after the sheet."></textarea>
-          </div>
-
-          <div class="builder-actions">
-            <button class="button button--signal" type="submit" id="add-button">Add to the run</button>
-            <button class="button button--ghost" type="button" id="clear-button">Start over</button>
-          </div>
-          <p class="saved" id="saved" role="status" aria-live="polite"></p>
-        </form>
-
-        <div class="panel sheet" id="sheet" aria-live="polite">
-          <header><h3>Your run</h3><span class="tag" id="sheet-tag">Empty</span></header>
-          <ul class="sheet-lines" id="sheet-lines"></ul>
-          <p class="empty" id="sheet-empty">No pieces yet. Add one from the left and it lands here.</p>
-          <div class="totals" id="totals" hidden>
-            <div><span>Pieces</span><strong id="total-pieces">0</strong></div>
-            <div><span>Partners</span><strong id="total-partners">0</strong></div>
-            <div><span>Production window</span><strong id="total-window">–</strong></div>
-            <div><span>Price</span><strong>Quoted per run</strong></div>
-          </div>
-          <div class="sheet-actions">
-            <button class="button button--ghost" type="button" id="copy-button">Copy the sheet</button>
-            <a class="button button--signal" id="email-button" href="mailto:hello@vibeshit.co">Email the sheet</a>
-            <button class="button button--ghost" type="button" id="link-button">Copy a link</button>
-          </div>
-          <p class="saved" id="sheet-status" role="status" aria-live="polite"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="section-head"><h2>Questions people actually ask</h2></div>
-      <div class="faq">
-        <details>
-          <summary>Why is it called VibeShit?</summary>
-          <p>Because that is what most of it becomes. The name keeps us honest: if a piece is not worth wearing twice, we should not make it. We are a real merchandise company — the logo is the joke, the production is not.</p>
-        </details>
-        <details>
-          <summary>What is the smallest order?</summary>
-          <p>12 pieces on caps, beanies, tees and hoodies; 25 on pins, keyrings and sticker packs. Each line has its own partner and its own minimum, shown on the card above.</p>
-        </details>
-        <details>
-          <summary>What does it cost?</summary>
-          <p>We quote each run: quantity, colourways, decoration and the partner's current rate decide it. Send the sheet and you get one quote with the production window, not a price list that expires.</p>
-        </details>
-        <details>
-          <summary>Can we see a sample first?</summary>
-          <p>Yes. A single plain piece from any line ships before a decorated run, and its cost comes off the order if the run goes ahead.</p>
-        </details>
-        <details>
-          <summary>How long does it take?</summary>
-          <p>Headwear 14–18 days, trinkets 18–24 days, threads 10–14 days after the proof is approved. A mixed run ships in the longest window, part-shipped from each partner.</p>
-        </details>
-        <details>
-          <summary>Do you ship outside the United States?</summary>
-          <p>Yes. Each partner quotes its own freight; the sheet names the destination before we confirm anything.</p>
-        </details>
-      </div>
-    </div>
+  <section id="faq" class="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">Questions people actually ask</h2>
+    <details>
+      <summary>Why is it called VibeShit?</summary>
+      <p>Because that is what most of it becomes. The name keeps us honest: if a piece is not worth wearing twice, we should not make it. The logo is the joke. The production is not.</p>
+    </details>
+    <details>
+      <summary>What is the smallest order?</summary>
+      <p>12 pieces on caps, beanies, tees and hoodies; 25 on pins and keyrings; 50 on sticker packs. Each line has its own shop and its own minimum.</p>
+    </details>
+    <details>
+      <summary>What does it cost?</summary>
+      <p>We quote each run: quantity, colourways, decoration and the shop’s current rate decide it. Send the sheet and you get one quote with the production window, not a price list that expires.</p>
+    </details>
+    <details>
+      <summary>Can we see a sample first?</summary>
+      <p>Yes. A single plain piece from any line ships before a decorated run, and its cost comes off the order if the run goes ahead.</p>
+    </details>
+    <details>
+      <summary>How long does it take?</summary>
+      <p>Headwear 14–18 days, trinkets 10–24 days, threads 10–16 days after the proof is approved. A mixed run ships in the longest window, part-shipped from each shop.</p>
+    </details>
+    <details>
+      <summary>Do you ship outside the United States?</summary>
+      <p>Yes. Each shop quotes its own freight; the sheet names the destination before we confirm anything.</p>
+    </details>
+    <details>
+      <summary>Are the pictures on this page real products?</summary>
+      <p>No. The stickers and the proof are drawings made for this page. Your proof comes from the shop, drawn on your art.</p>
+    </details>
   </section>
 
 </main>
 
-<footer class="site">
-  <div class="wrap">
-    <div class="who">
-      <p><strong>VibeShit</strong> — promotional merchandise and giveaways, made on demand. A company of CommandAGI.</p>
-      <p class="fine">Order sheets are built on this device. This page takes no payment and sends us nothing; our host counts a page view.</p>
-    </div>
-    <div class="links">
-      <a href="mailto:hello@vibeshit.co">hello@vibeshit.co</a>
-      <a href="#build">Build an order sheet</a>
-      <a href="es/" hreflang="es">Español</a>
-      <a href="zh-Hans/" hreflang="zh-Hans">简体中文</a>
-      <span class="fine">vibeshit.co</span>
-    </div>
+<footer class="foot">
+  <img class="foot__mark" src="wordmark.svg" alt="" width="603" height="132">
+  <div class="foot__who">
+    <p><strong>VibeShit</strong> — promotional merchandise and giveaways, made on demand. A company of CommandAGI.</p>
+    <p class="fine">Order sheets are built on this device. This page takes no payment and sends us nothing; our host counts a page view.</p>
   </div>
+  <p class="foot__links">
+    <a href="mailto:hello@vibeshit.co">hello@vibeshit.co</a>
+    <a href="#build">Start a run</a>
+    <a href="es/" hreflang="es" lang="es">Español</a>
+    <a href="zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <span class="fine">vibeshit.co</span>
+  </p>
 </footer>
 
-<script src="app.js" defer></script>
+<script type="module" src="app.js"></script>
 </body>
 </html>

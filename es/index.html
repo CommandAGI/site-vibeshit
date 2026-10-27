@@ -9,235 +9,234 @@
 <meta property="og:description" content="Gorras, chácharas y prendas para tu equipo, hechas cuando haces el pedido. Una hoja de pedido, tres socios verticales.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vibeshit.co/es/">
+<meta property="og:image" content="https://vibeshit.co/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://cloudflareinsights.com; img-src 'self' data:; style-src 'self'; script-src 'self' https://static.cloudflareinsights.com; base-uri 'none'; form-action 'none'">
-<meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f1114" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#e6ff58">
 <link rel="icon" href="../mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../touch-icon.png">
+<link rel="preload" href="../fonts/bowlby-one.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/space-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../style.css">
 <link rel="alternate" hreflang="en" href="https://vibeshit.co/">
 <link rel="alternate" hreflang="es" href="https://vibeshit.co/es/">
 <link rel="alternate" hreflang="zh-Hans" href="https://vibeshit.co/zh-Hans/">
 </head>
 <body>
-<a class="skip" href="#main">Ir al contenido</a>
+<a class="skip" href="#main">Saltar al contenido</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <a class="brand" href="../" aria-label="VibeShit, inicio">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 10h4l4 10 4-10h4l-6.6 15h-2.8L8 10Z" fill="var(--paper)"/></svg>
-      Vibe<em>Shit</em>
-    </a>
-    <nav class="nav" aria-label="Principal">
-      <a href="#lines">Líneas</a>
-      <a href="#how">Cómo funciona</a>
-      <a href="#landfill">El problema del vertedero</a>
-      <a class="cta" href="#build">Crear un pedido</a>
-    </nav>
-    <button class="lang-btn" type="button" id="lang-button" aria-haspopup="dialog" aria-label="Idioma: español">
-      <span class="lang-btn__glyph" aria-hidden="true">A<span>/</span><span lang="zh-Hans">文</span></span>
-    </button>
-  </div>
+<header class="tape">
+  <a class="tape__brand" href="./" aria-label="Inicio de VibeShit"><img src="../wordmark.svg" alt="VibeShit" width="201" height="44"></a>
+  <nav class="tape__nav" aria-label="Principal">
+    <a href="#lines"><b>01</b> La mesa</a>
+    <a href="#how"><b>02</b> Cómo va un pedido</a>
+    <a href="#landfill"><b>03</b> Por qué el nombre</a>
+    <a class="tape__go" href="#build"><b>04</b> Empezar un pedido</a>
+  </nav>
+  <button class="lang-btn" type="button" id="lang-button" aria-haspopup="dialog" aria-label="Idioma: español">
+    <span class="lang-btn__glyph" aria-hidden="true">A<span>/</span><span lang="zh-Hans">文</span></span>
+  </button>
 </header>
 
-<dialog id="lang-dialog" aria-label="Idioma">
+<dialog id="lang-dialog" aria-label="Language">
   <ul class="lang-list">
-    <li><a href="../"><span>English</span><small>en</small></a></li>
-    <li><a href="./" aria-current="true"><span>Español</span><small>es</small></a></li>
-    <li><a href="../zh-Hans/"><span lang="zh-Hans">简体中文</span><small>zh-Hans</small></a></li>
+    <li><a href="../" hreflang="en"><span lang="en">English</span><small>en</small></a></li>
+    <li><a href="./" aria-current="true"><span lang="es">Español</span><small>es</small></a></li>
+    <li><a href="../zh-Hans/" hreflang="zh-Hans"><span lang="zh-Hans">简体中文</span><small>zh-Hans</small></a></li>
   </ul>
 </dialog>
 
 <main id="main">
 
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Merchandising promocional, hecho bajo pedido</p>
-        <h1>Merchandising que existe porque alguien <em>lo quiso</em>.</h1>
-        <p class="lede">Gorras, chácharas y prendas para tu equipo: hechas cuando haces el pedido, no guardadas hasta el próximo cambio de marca. Tres socios verticales, una hoja de pedido limpia.</p>
-        <div class="actions">
-          <a class="button button--signal" href="#build">Crear un pedido</a>
-          <a class="button button--ghost" href="#how">Cómo funciona</a>
-        </div>
-      </div>
-      <aside class="sheet-preview" aria-label="Hoja de pedido de ejemplo">
-        <header>
-          <h3>Hoja de pedido · Pedido 214</h3>
-          <span class="tag">Ejemplo</span>
-        </header>
-        <div class="sheet-line"><span>Gorra estructurada × 48</span><span>sombreros</span></div>
-        <div class="sheet-line"><span>Pin de esmalte × 250</span><span>chácharas</span></div>
-        <div class="sheet-line"><span>Camiseta gruesa × 96</span><span>prendas</span></div>
-        <footer><span>3 socios · 0 almacenes</span><span>envío en 14–21 días</span></footer>
-      </aside>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="eyebrow">Merchandising promocional, hecho bajo pedido</p>
+      <h1 id="hero-title"><span class="h1-line h1-line--0">Merch que</span> <span class="h1-line h1-line--1">existe porque</span> <span class="h1-line h1-line--2">alguien</span> <span class="h1-line h1-line--3"><em>lo quiso.</em></span></h1>
+      <p class="lede">Gorras, chácharas y prendas. Hechas cuando haces el pedido, por tres talleres que hacen una sola cosa cada uno. Sin montaña.</p>
+      <p class="actions"><a class="button button--go" href="#build">Empezar un pedido</a> <a class="button button--tape" href="#how">Cómo va un pedido</a></p>
+    </div>
+    <div class="pile" id="pile" aria-hidden="true" data-words="{&quot;min&quot;:&quot;desde 12 piezas&quot;,&quot;warehouse&quot;:&quot;0 almacenes&quot;,&quot;proof&quot;:&quot;prueba en 24 h&quot;,&quot;after&quot;:&quot;hecho tras tu pedido&quot;}"></div>
+    <div class="setlist">
+      <h2 class="setlist__title" id="pile-label">En la mesa</h2>
+      <ul aria-labelledby="pile-label">
+        <li><button type="button" data-pick="cap">Gorra estructurada<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="beanie">Gorro acanalado<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="pin">Pin de esmalte blando<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="keyring">Llavero troquelado<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="stickers">Pack de pegatinas<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="tee">Camiseta gruesa<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="hoodie">Sudadera boxy<span aria-hidden="true">→</span></button></li>
+      </ul>
+      <p class="setlist__hint">Arrastra la pila. Toca una pieza para empezar un pedido con ella. Dibujos, no fotos.</p>
     </div>
   </section>
 
-  <div class="facts" aria-label="Lo que somos">
-    <div class="wrap">
-      <div class="fact"><strong>12</strong>piezas, el pedido más pequeño</div>
-      <div class="fact"><strong>3</strong>socios verticales, uno por línea</div>
-      <div class="fact"><strong>0</strong>almacenes con tu stock</div>
-      <div class="fact"><strong>24 h</strong>para tu prueba de arte</div>
+  <section id="lines" class="lines" aria-labelledby="lines-title">
+    <h2 id="lines-title"><span>Tres líneas.</span> <span>Tres talleres que solo hacen eso.</span></h2>
+    <p class="lines__lede">Pides una vez. Cada taller hace solo lo pedido y lo envía directo.</p>
+    <div class="tags">
+        <article class="tag tag--headwear">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>Sombreros</h3>
+          <p class="tag__shop">Un taller de bordado</p>
+          <ul>
+            <li><span>Gorra estructurada</span><span>mín. 12</span></li>
+            <li><span>Gorro acanalado</span><span>mín. 12</span></li>
+          </ul>
+          <p class="tag__days">14–18 días · bajo pedido</p>
+        </article>
+        <article class="tag tag--trinkets">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>Chácharas</h3>
+          <p class="tag__shop">Un estudio de esmalte</p>
+          <ul>
+            <li><span>Pin de esmalte blando</span><span>mín. 25</span></li>
+            <li><span>Llavero troquelado</span><span>mín. 25</span></li>
+            <li><span>Pack de pegatinas</span><span>mín. 50</span></li>
+          </ul>
+          <p class="tag__days">10–24 días · bajo pedido</p>
+        </article>
+        <article class="tag tag--threads">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>Prendas</h3>
+          <p class="tag__shop">Un taller de confección</p>
+          <ul>
+            <li><span>Camiseta gruesa</span><span>mín. 12</span></li>
+            <li><span>Sudadera boxy</span><span>mín. 12</span></li>
+          </ul>
+          <p class="tag__days">10–16 días · bajo pedido</p>
+        </article>
     </div>
-  </div>
+  </section>
 
-  <section id="lines">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Tres líneas. Tres socios que solo hacen esa una cosa.</h2>
-        <p>Cada línea la produce un especialista al que compramos directamente: bordado, esmalte blando, corte y confección. Haces el pedido una vez; cada socio fabrica solo lo pedido y lo envía directo.</p>
-      </div>
-      <div class="cards" id="cards">
-        <noscript><p class="lede">Sombreros, chácharas y prendas: gorras, gorros, pines, llaveros, pegatinas, camisetas y sudaderas. Activa JavaScript para crear una hoja de pedido, o escribe a hello@vibeshit.co.</p></noscript>
+  <section id="how" class="how" aria-labelledby="how-title">
+    <div class="how__copy">
+      <h2 id="how-title">Cómo va un pedido</h2>
+      <p>Cuatro pasadas, como una impresión a cuatro tintas. Nada se fabrica antes de que apruebes la prueba.</p>
+      <ol class="passes">
+        <li class="pass pass--chartreuse"><h3>Eliges las piezas</h3><p>Pieza, color, dónde va el arte, cuántas.</p></li>
+        <li class="pass pass--magenta"><h3>Repartimos las líneas</h3><p>Cada línea va a su taller con las tallas y el arte.</p></li>
+        <li class="pass pass--cyan"><h3>Prueba en un día</h3><p>Una prueba por cada pieza decorada. Dices sí o dices cámbialo.</p></li>
+        <li class="pass pass--ink"><h3>Se fabrica y se envía</h3><p>Las cajas salen del taller. No de un almacén nuestro.</p></li>
+      </ol>
+    </div>
+    <div class="print" role="img" aria-label="Una impresión a cuatro tintas que se forma al desplazarte">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <g class="ink ink--chartreuse"><path d="M60 120c20-70 120-90 160-40 50-40 140-10 120 70 60 20 50 120-10 130 10 70-80 90-120 50-40 50-140 20-130-50-60-20-70-110-20-160Z"/></g>
+        <g class="ink ink--magenta"><path d="M206 52 120 214h68l-26 128 116-178h-74l46-112Z"/></g>
+        <g class="ink ink--cyan"><circle cx="300" cy="300" r="46"/><circle cx="96" cy="96" r="22"/><circle cx="330" cy="92" r="14"/></g>
+        <g class="ink ink--ink"><path d="M40 360c40-30 80 30 120 0s80 30 120 0 80 30 100 10" fill="none" stroke-width="12" stroke-linecap="round"/><path d="M28 28h30M43 13v30M342 28h30M357 13v30M28 372h30M43 357v30M342 372h30M357 357v30" fill="none" stroke-width="3"/></g>
+      </svg>
+    </div>
+  </section>
+
+  <section id="landfill" class="landfill" aria-labelledby="landfill-title">
+    <p class="eyebrow">Por qué el nombre</p>
+    <h2 id="landfill-title"><span>El chiste es el nombre.</span> <span>El problema es la montaña.</span></h2>
+    <p class="landfill__p">Casi todo el merch se pide al por mayor, se reparte una vez y se usa una semana. Luego un cajón. Luego la basura. Le pusimos a la empresa el nombre de la basura para que nadie tenga que fingir.</p>
+    <ul class="stamps">
+      <li class="stamp stamp--0"><b>Hecho tras tu pedido</b><span>Nada espera en stock a un congreso cancelado.</span></li>
+      <li class="stamp stamp--1"><b>Desde 12 piezas</b><span>Un piloto vale más que un palé del que te arrepientes.</span></li>
+      <li class="stamp stamp--2"><b>Para usar dos veces</b><span>Bordado real, esmalte blando, algodón peinado.</span></li>
+      <li class="stamp stamp--3"><b>Papel, no plástico</b><span>Envoltorios y cajas de papel por defecto.</span></li>
+      <li class="stamp stamp--4"><b>Devuélvelo</b><span>Las piezas sin usar vuelven al taller para rehacerse.</span></li>
+    </ul>
+    <p class="landfill__note">No decimos ser neutrales en carbono. Decimos fabricar menos cosas que nadie quiere.</p>
+  </section>
+
+  <section id="build" class="build" aria-labelledby="build-title">
+    <header class="build__head">
+      <h2 id="build-title">Empezar un pedido</h2>
+      <p>Esta página no cotiza ni cobra. Crea la hoja que nos envías. El pedido queda en este dispositivo hasta que lo copies.</p>
+    </header>
+    <div class="builder">
+      <form class="ticket" id="builder-form" novalidate>
+        <p class="ticket__label">Orden de trabajo</p>
+        <fieldset class="stage" id="stage-piece"><legend><b>01</b> Pieza</legend><div class="chips chips--pieces" id="item-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>02</b> Color</legend><div class="chips chips--drops" id="color-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>03</b> Ubicación</legend><div class="chips" id="place-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>04</b> Cantidad</legend><div class="chips chips--qty" id="qty-chips"></div><p class="tally" id="tally" title="un trazo = un pedido mínimo"></p></fieldset>
+        <div class="stage"><label class="stage__label" for="art-note"><b>05</b> Nota de arte</label><textarea id="art-note" rows="3" maxlength="240" placeholder="Tu logo, una tinta. El archivo de arte va después de la hoja."></textarea></div>
+        <p class="ticket__actions"><button class="button button--go" type="submit" id="add-button">Añadir al pedido</button> <button class="button button--tape" type="button" id="clear-button">Empezar de nuevo</button></p>
+        <p class="saved" id="saved" role="status" aria-live="polite"></p>
+      </form>
+
+      <figure class="proof" aria-labelledby="proof-caption">
+        <p class="proof__label">Prueba · dibujo ilustrativo · sin aprobar</p>
+        <div class="proof__art" id="proof"></div>
+        <figcaption id="proof-caption"></figcaption>
+        <p class="proof__note" id="proof-note"></p>
+      </figure>
+
+      <div class="sheet" id="sheet" aria-live="polite">
+        <header><h3>Tu pedido</h3><span class="sheet__tag" id="sheet-tag">Vacío</span></header>
+        <ul class="sheet-lines" id="sheet-lines"></ul>
+        <p class="sheet__empty" id="sheet-empty">Aún no hay nada en la orden. Añade una pieza y aparece aquí.</p>
+        <dl class="totals" id="totals" hidden>
+          <div><dt>Piezas</dt><dd id="total-pieces">0</dd></div>
+          <div><dt>Talleres</dt><dd id="total-partners">0</dd></div>
+          <div><dt>Plazo de producción</dt><dd id="total-window">–</dd></div>
+          <div><dt>Precio</dt><dd>Se cotiza por pedido</dd></div>
+        </dl>
+        <p class="sheet__actions">
+          <button class="button button--tape" type="button" id="copy-button">Copiar la hoja</button>
+          <a class="button button--go" id="email-button" href="mailto:hello@vibeshit.co">Enviar la hoja por correo</a>
+          <button class="button button--tape" type="button" id="link-button">Copiar un enlace</button>
+        </p>
+        <p class="saved" id="sheet-status" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
 
-  <section id="how">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Cómo se hace un pedido</h2>
-        <p>Sin llamada de ventas. La hoja de pedido es toda la conversación.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><h3>Eliges las piezas</h3><p>Armas la hoja con las tres líneas. Colores, cantidad y dónde va tu arte.</p></div>
-        <div class="step"><h3>Repartimos las líneas</h3><p>Cada línea va a su socio con la curva de tallas y el archivo de arte adjuntos.</p></div>
-        <div class="step"><h3>Prueba en un día</h3><p>Vuelve una prueba digital por cada pieza decorada. Nada se fabrica antes de tu sí.</p></div>
-        <div class="step"><h3>Se hace y se envía</h3><p>La producción empieza tras la prueba. Las cajas salen del socio, no de un almacén nuestro.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="landfill" class="landfill">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Por qué el nombre</p>
-        <h2>La broma es el nombre. El problema es la pila.</h2>
-        <p>Casi todo el merchandising de marca se pide por volumen, se reparte una vez y se usa una semana. El resto acaba en un cajón, luego en un contenedor, y el contenedor es la parte que la industria no pone en la factura. Le pusimos ese nombre a la empresa para que nadie tenga que fingir lo contrario.</p>
-        <p class="note">No decimos que seamos neutros en carbono. Decimos que hacemos menos cosas que nadie quiere.</p>
-      </div>
-      <div>
-        <ul>
-          <li><b>Hecho después de tu pedido</b>Ningún stock espera en un almacén a una conferencia que se canceló.</li>
-          <li><b>Mínimos pequeños</b>Desde 12 piezas. Un pedido piloto es mejor que un palé del que te arrepientes.</li>
-          <li><b>Cosas que se quedan</b>Piezas que vale la pena usar dos veces: bordado de verdad, esmalte blando, algodón peinado.</li>
-          <li><b>Sin plástico donde se pueda</b>Envoltorio de papel y cartón por defecto; el socio dice qué puede hacer para tu línea.</li>
-          <li><b>Si vuelve, lo tomamos</b>Las piezas sin usar de un pedido vuelven al socio para rehacerlas, no a un vertedero.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="build">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Crea una hoja de pedido</h2>
-        <p>Esta página no cotiza ni cobra nada: arma la hoja que nos envías. Tu pedido se queda en este dispositivo hasta que lo copies.</p>
-      </div>
-      <div class="builder">
-        <form class="panel" id="builder-form" novalidate>
-          <h3>Añade una pieza</h3>
-          <p class="hint">Elige una línea, un color y una cantidad. La hoja calcula el pedido.</p>
-
-          <div class="field">
-            <span class="label" id="item-label">Pieza</span>
-            <div class="chips" id="item-chips" role="group" aria-labelledby="item-label"></div>
-          </div>
-
-          <div class="field">
-            <span class="label" id="color-label">Color</span>
-            <div class="swatches" id="color-chips" role="group" aria-labelledby="color-label"></div>
-          </div>
-
-          <div class="field">
-            <span class="label" id="qty-label">Cantidad</span>
-            <div class="chips" id="qty-chips" role="group" aria-labelledby="qty-label"></div>
-          </div>
-
-          <div class="field">
-            <label class="label" for="art-note">Arte y colocación</label>
-            <textarea id="art-note" placeholder="Tu logo, pecho izquierdo, una tinta; el archivo de arte llega después de la hoja."></textarea>
-          </div>
-
-          <div class="builder-actions">
-            <button class="button button--signal" type="submit" id="add-button">Añadir al pedido</button>
-            <button class="button button--ghost" type="button" id="clear-button">Empezar de nuevo</button>
-          </div>
-          <p class="saved" id="saved" role="status" aria-live="polite"></p>
-        </form>
-
-        <div class="panel sheet" id="sheet" aria-live="polite">
-          <header><h3>Tu pedido</h3><span class="tag" id="sheet-tag">Vacío</span></header>
-          <ul class="sheet-lines" id="sheet-lines"></ul>
-          <p class="empty" id="sheet-empty">Todavía no hay piezas. Añade una a la izquierda y aparece aquí.</p>
-          <div class="totals" id="totals" hidden>
-            <div><span>Piezas</span><strong id="total-pieces">0</strong></div>
-            <div><span>Socios</span><strong id="total-partners">0</strong></div>
-            <div><span>Plazo de producción</span><strong id="total-window">–</strong></div>
-            <div><span>Precio</span><strong>Se cotiza por pedido</strong></div>
-          </div>
-          <div class="sheet-actions">
-            <button class="button button--ghost" type="button" id="copy-button">Copiar la hoja</button>
-            <a class="button button--signal" id="email-button" href="mailto:hello@vibeshit.co">Enviar la hoja</a>
-            <button class="button button--ghost" type="button" id="link-button">Copiar un enlace</button>
-          </div>
-          <p class="saved" id="sheet-status" role="status" aria-live="polite"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="section-head"><h2>Preguntas que la gente hace de verdad</h2></div>
-      <div class="faq">
-        <details>
-          <summary>¿Por qué se llama VibeShit?</summary>
-          <p>Porque eso es lo que acaba siendo la mayor parte. El nombre nos mantiene honestos: si una pieza no vale la pena usarla dos veces, no deberíamos hacerla. Somos una empresa de merchandising de verdad: el logo es la broma, la producción no.</p>
-        </details>
-        <details>
-          <summary>¿Cuál es el pedido mínimo?</summary>
-          <p>12 piezas en gorras, gorros, camisetas y sudaderas; 25 en pines, llaveros y packs de pegatinas. Cada línea tiene su socio y su mínimo, que ves en la tarjeta de arriba.</p>
-        </details>
-        <details>
-          <summary>¿Cuánto cuesta?</summary>
-          <p>Cotizamos cada pedido: cantidad, colores, decoración y la tarifa actual del socio deciden. Envía la hoja y recibes una cotización con su plazo de producción, no una lista de precios que caduca.</p>
-        </details>
-        <details>
-          <summary>¿Podemos ver una muestra primero?</summary>
-          <p>Sí. Una pieza lisa de cualquier línea se envía antes de un pedido decorado, y su coste se descuenta del pedido si sigue adelante.</p>
-        </details>
-        <details>
-          <summary>¿Cuánto tarda?</summary>
-          <p>Sombreros 14–18 días, chácharas 18–24 días, prendas 10–14 días tras aprobar la prueba. Un pedido mixto sale en el plazo más largo, con envíos parciales de cada socio.</p>
-        </details>
-        <details>
-          <summary>¿Envían fuera de Estados Unidos?</summary>
-          <p>Sí. Cada socio cotiza su propio flete; la hoja indica el destino antes de confirmar nada.</p>
-        </details>
-      </div>
-    </div>
+  <section id="faq" class="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">Lo que la gente pregunta de verdad</h2>
+    <details>
+      <summary>¿Por qué se llama VibeShit?</summary>
+      <p>Porque en eso se convierte casi todo. El nombre nos mantiene honestos: si una pieza no vale para usarse dos veces, no deberíamos fabricarla. El logo es el chiste. La producción no.</p>
+    </details>
+    <details>
+      <summary>¿Cuál es el pedido mínimo?</summary>
+      <p>12 piezas en gorras, gorros, camisetas y sudaderas; 25 en pins y llaveros; 50 en packs de pegatinas. Cada línea tiene su taller y su mínimo.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto cuesta?</summary>
+      <p>Cotizamos cada pedido: la cantidad, los colores, la decoración y la tarifa actual del taller lo deciden. Envía la hoja y recibes una cotización con el plazo, no una lista de precios que caduca.</p>
+    </details>
+    <details>
+      <summary>¿Podemos ver una muestra antes?</summary>
+      <p>Sí. Una pieza lisa de cualquier línea se envía antes del pedido decorado, y su costo se descuenta si el pedido sigue adelante.</p>
+    </details>
+    <details>
+      <summary>¿Cuánto tarda?</summary>
+      <p>Sombreros 14–18 días, chácharas 10–24 días, prendas 10–16 días tras aprobar la prueba. Un pedido mixto sale en el plazo más largo, en envíos parciales desde cada taller.</p>
+    </details>
+    <details>
+      <summary>¿Envían fuera de Estados Unidos?</summary>
+      <p>Sí. Cada taller cotiza su propio flete; la hoja indica el destino antes de confirmar nada.</p>
+    </details>
+    <details>
+      <summary>¿Las imágenes de esta página son productos reales?</summary>
+      <p>No. Las pegatinas y la prueba son dibujos hechos para esta página. Tu prueba viene del taller, dibujada con tu arte.</p>
+    </details>
   </section>
 
 </main>
 
-<footer class="site">
-  <div class="wrap">
-    <div class="who">
-      <p><strong>VibeShit</strong> — merchandising promocional y regalos, hechos bajo pedido. Una empresa de CommandAGI.</p>
-      <p class="fine">Las hojas de pedido se arman en este dispositivo. Esta página no cobra ni nos envía nada; nuestro proveedor cuenta una visita.</p>
-    </div>
-    <div class="links">
-      <a href="mailto:hello@vibeshit.co">hello@vibeshit.co</a>
-      <a href="#build">Crear una hoja de pedido</a>
-      <a href="../" hreflang="en">English</a>
-      <a href="../zh-Hans/" hreflang="zh-Hans">简体中文</a>
-      <span class="fine">vibeshit.co</span>
-    </div>
+<footer class="foot">
+  <img class="foot__mark" src="../wordmark.svg" alt="" width="603" height="132">
+  <div class="foot__who">
+    <p><strong>VibeShit</strong> — merchandising promocional y regalos, hechos bajo pedido. Una empresa de CommandAGI.</p>
+    <p class="fine">Las hojas de pedido se crean en este dispositivo. Esta página no cobra nada ni nos envía nada; nuestro hosting cuenta una visita.</p>
   </div>
+  <p class="foot__links">
+    <a href="mailto:hello@vibeshit.co">hello@vibeshit.co</a>
+    <a href="#build">Empezar un pedido</a>
+    <a href="../" hreflang="en" lang="en">English</a>
+    <a href="../zh-Hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <span class="fine">vibeshit.co</span>
+  </p>
 </footer>
 
-<script src="../app.js" defer></script>
+<script type="module" src="../app.js"></script>
 </body>
 </html>

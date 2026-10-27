@@ -9,10 +9,14 @@
 <meta property="og:description" content="为你的团队做帽子、小物与衣物，下单后才生产。一张订单表，三个垂直合作方。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vibeshit.co/zh-Hans/">
+<meta property="og:image" content="https://vibeshit.co/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://cloudflareinsights.com; img-src 'self' data:; style-src 'self'; script-src 'self' https://static.cloudflareinsights.com; base-uri 'none'; form-action 'none'">
-<meta name="theme-color" content="#f4f1e8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f1114" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#e6ff58">
 <link rel="icon" href="../mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../touch-icon.png">
+<link rel="preload" href="../fonts/bowlby-one.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/space-mono-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../style.css">
 <link rel="alternate" hreflang="en" href="https://vibeshit.co/">
 <link rel="alternate" hreflang="es" href="https://vibeshit.co/es/">
@@ -21,223 +25,218 @@
 <body>
 <a class="skip" href="#main">跳到正文</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <a class="brand" href="../" aria-label="VibeShit 首页">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 10h4l4 10 4-10h4l-6.6 15h-2.8L8 10Z" fill="var(--paper)"/></svg>
-      Vibe<em>Shit</em>
-    </a>
-    <nav class="nav" aria-label="主导航">
-      <a href="#lines">产品线</a>
-      <a href="#how">如何运作</a>
-      <a href="#landfill">垃圾场问题</a>
-      <a class="cta" href="#build">生成订单</a>
-    </nav>
-    <button class="lang-btn" type="button" id="lang-button" aria-haspopup="dialog" aria-label="语言：简体中文">
-      <span class="lang-btn__glyph" aria-hidden="true">A<span>/</span><span lang="zh-Hans">文</span></span>
-    </button>
-  </div>
+<header class="tape">
+  <a class="tape__brand" href="./" aria-label="VibeShit 首页"><img src="../wordmark.svg" alt="VibeShit" width="201" height="44"></a>
+  <nav class="tape__nav" aria-label="主导航">
+    <a href="#lines"><b>01</b> 桌上的货</a>
+    <a href="#how"><b>02</b> 一单怎么走</a>
+    <a href="#landfill"><b>03</b> 为什么叫这个名字</a>
+    <a class="tape__go" href="#build"><b>04</b> 开一单</a>
+  </nav>
+  <button class="lang-btn" type="button" id="lang-button" aria-haspopup="dialog" aria-label="语言：简体中文">
+    <span class="lang-btn__glyph" aria-hidden="true">A<span>/</span><span lang="zh-Hans">文</span></span>
+  </button>
 </header>
 
-<dialog id="lang-dialog" aria-label="语言">
+<dialog id="lang-dialog" aria-label="Language">
   <ul class="lang-list">
-    <li><a href="../"><span>English</span><small>en</small></a></li>
-    <li><a href="../es/"><span>Español</span><small>es</small></a></li>
+    <li><a href="../" hreflang="en"><span lang="en">English</span><small>en</small></a></li>
+    <li><a href="../es/" hreflang="es"><span lang="es">Español</span><small>es</small></a></li>
     <li><a href="./" aria-current="true"><span lang="zh-Hans">简体中文</span><small>zh-Hans</small></a></li>
   </ul>
 </dialog>
 
 <main id="main">
 
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">按订单生产的促销周边</p>
-        <h1>有人想要，才会存在的<em>周边</em>。</h1>
-        <p class="lede">为你的团队做帽子、小物和衣物——下单后才生产，而不是堆在仓库里等下一次换品牌。三个垂直合作方，一张干净的订单表。</p>
-        <div class="actions">
-          <a class="button button--signal" href="#build">生成订单</a>
-          <a class="button button--ghost" href="#how">如何运作</a>
-        </div>
-      </div>
-      <aside class="sheet-preview" aria-label="订单表示例">
-        <header>
-          <h3>订单表 · 第 214 单</h3>
-          <span class="tag">示例</span>
-        </header>
-        <div class="sheet-line"><span>硬顶棒球帽 × 48</span><span>帽子</span></div>
-        <div class="sheet-line"><span>烤漆徽章 × 250</span><span>小物</span></div>
-        <div class="sheet-line"><span>重磅 T 恤 × 96</span><span>衣物</span></div>
-        <footer><span>3 个合作方 · 0 个仓库</span><span>14–21 天发出</span></footer>
-      </aside>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="eyebrow">按订单生产的促销周边</p>
+      <h1 id="hero-title"><span class="h1-line h1-line--0">有人想要，</span> <span class="h1-line h1-line--1">才会存在的</span> <span class="h1-line h1-line--2"><em>周边。</em></span></h1>
+      <p class="lede">帽子、小物、衣物。你下单才生产，由三家各只做一件事的工坊完成。没有垃圾山。</p>
+      <p class="actions"><a class="button button--go" href="#build">开一单</a> <a class="button button--tape" href="#how">一单怎么走</a></p>
+    </div>
+    <div class="pile" id="pile" aria-hidden="true" data-words="{&quot;min&quot;:&quot;12 件起&quot;,&quot;warehouse&quot;:&quot;0 个仓库&quot;,&quot;proof&quot;:&quot;24 小时出样&quot;,&quot;after&quot;:&quot;下单后才做&quot;}"></div>
+    <div class="setlist">
+      <h2 class="setlist__title" id="pile-label">桌上的货</h2>
+      <ul aria-labelledby="pile-label">
+        <li><button type="button" data-pick="cap">硬顶棒球帽<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="beanie">罗纹针织帽<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="pin">烤漆徽章<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="keyring">异形钥匙扣<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="stickers">贴纸包<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="tee">重磅 T 恤<span aria-hidden="true">→</span></button></li>
+        <li><button type="button" data-pick="hoodie">宽松连帽衫<span aria-hidden="true">→</span></button></li>
+      </ul>
+      <p class="setlist__hint">拖动这堆贴纸。点一件，就用它开一单。都是画，不是照片。</p>
     </div>
   </section>
 
-  <div class="facts" aria-label="我们是什么">
-    <div class="wrap">
-      <div class="fact"><strong>12</strong>件起订</div>
-      <div class="fact"><strong>3</strong>个垂直合作方，每条线一个</div>
-      <div class="fact"><strong>0</strong>个存放你库存的仓库</div>
-      <div class="fact"><strong>24 小时</strong>出制版确认</div>
+  <section id="lines" class="lines" aria-labelledby="lines-title">
+    <h2 id="lines-title"><span>三条产品线，</span> <span>三家只做这一件事的工坊。</span></h2>
+    <p class="lines__lede">你只下一次单。每家工坊只做订了的东西，直接发货。</p>
+    <div class="tags">
+        <article class="tag tag--headwear">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>帽子</h3>
+          <p class="tag__shop">一家刺绣工坊</p>
+          <ul>
+            <li><span>硬顶棒球帽</span><span>起订 12</span></li>
+            <li><span>罗纹针织帽</span><span>起订 12</span></li>
+          </ul>
+          <p class="tag__days">14–18 天 · 按单生产</p>
+        </article>
+        <article class="tag tag--trinkets">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>小物</h3>
+          <p class="tag__shop">一家烤漆工坊</p>
+          <ul>
+            <li><span>烤漆徽章</span><span>起订 25</span></li>
+            <li><span>异形钥匙扣</span><span>起订 25</span></li>
+            <li><span>贴纸包</span><span>起订 50</span></li>
+          </ul>
+          <p class="tag__days">10–24 天 · 按单生产</p>
+        </article>
+        <article class="tag tag--threads">
+          <span class="tag__hole" aria-hidden="true"></span>
+          <h3>衣物</h3>
+          <p class="tag__shop">一家针织成衣厂</p>
+          <ul>
+            <li><span>重磅 T 恤</span><span>起订 12</span></li>
+            <li><span>宽松连帽衫</span><span>起订 12</span></li>
+          </ul>
+          <p class="tag__days">10–16 天 · 按单生产</p>
+        </article>
     </div>
-  </div>
+  </section>
 
-  <section id="lines">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>三条产品线。三个只做一件事的合作方。</h2>
-        <p>每条线都由我们直接采购的专职工坊生产：刺绣、烤漆、裁剪缝制。你只下一次单；每个合作方只做被订的那部分，并直接发货。</p>
-      </div>
-      <div class="cards" id="cards">
-        <noscript><p class="lede">帽子、小物与衣物：棒球帽、针织帽、徽章、钥匙扣、贴纸、T 恤和连帽衫。启用 JavaScript 可生成订单表，也可以写信到 hello@vibeshit.co。</p></noscript>
+  <section id="how" class="how" aria-labelledby="how-title">
+    <div class="how__copy">
+      <h2 id="how-title">一单怎么走</h2>
+      <p>四遍，就像四色印刷。你确认打样之前，什么都不生产。</p>
+      <ol class="passes">
+        <li class="pass pass--chartreuse"><h3>选好商品</h3><p>款式、颜色、图案位置、数量。</p></li>
+        <li class="pass pass--magenta"><h3>我们分派产品线</h3><p>每条线连同尺码和图案交给各自的工坊。</p></li>
+        <li class="pass pass--cyan"><h3>一天出样</h3><p>每件有装饰的商品都有打样。你说好，或者说改。</p></li>
+        <li class="pass pass--ink"><h3>生产，然后发货</h3><p>箱子从工坊发出，不经过我们的仓库。</p></li>
+      </ol>
+    </div>
+    <div class="print" role="img" aria-label="随滚动逐层叠印的四色印刷">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <g class="ink ink--chartreuse"><path d="M60 120c20-70 120-90 160-40 50-40 140-10 120 70 60 20 50 120-10 130 10 70-80 90-120 50-40 50-140 20-130-50-60-20-70-110-20-160Z"/></g>
+        <g class="ink ink--magenta"><path d="M206 52 120 214h68l-26 128 116-178h-74l46-112Z"/></g>
+        <g class="ink ink--cyan"><circle cx="300" cy="300" r="46"/><circle cx="96" cy="96" r="22"/><circle cx="330" cy="92" r="14"/></g>
+        <g class="ink ink--ink"><path d="M40 360c40-30 80 30 120 0s80 30 120 0 80 30 100 10" fill="none" stroke-width="12" stroke-linecap="round"/><path d="M28 28h30M43 13v30M342 28h30M357 13v30M28 372h30M43 357v30M342 372h30M357 357v30" fill="none" stroke-width="3"/></g>
+      </svg>
+    </div>
+  </section>
+
+  <section id="landfill" class="landfill" aria-labelledby="landfill-title">
+    <p class="eyebrow">为什么叫这个名字</p>
+    <h2 id="landfill-title"><span>名字是个玩笑，</span> <span>问题是那座垃圾山。</span></h2>
+    <p class="landfill__p">大多数周边都是批量订购，发一次，穿一周。然后进抽屉，再进垃圾桶。我们用垃圾桶给公司起名，这样谁都不用假装。</p>
+    <ul class="stamps">
+      <li class="stamp stamp--0"><b>下单后才做</b><span>不会有库存等着一场取消的会议。</span></li>
+      <li class="stamp stamp--1"><b>12 件起</b><span>试做一小批，胜过后悔一整托盘。</span></li>
+      <li class="stamp stamp--2"><b>值得穿第二次</b><span>真刺绣、烤漆、环纺棉。</span></li>
+      <li class="stamp stamp--3"><b>用纸，不用塑料</b><span>默认纸包装和纸箱。</span></li>
+      <li class="stamp stamp--4"><b>可以寄回</b><span>没穿过的商品退回工坊重做。</span></li>
+    </ul>
+    <p class="landfill__note">我们不声称碳中和。我们只声称少做没人要的东西。</p>
+  </section>
+
+  <section id="build" class="build" aria-labelledby="build-title">
+    <header class="build__head">
+      <h2 id="build-title">开一单</h2>
+      <p>这个页面不报价，也不收费。它只生成你发给我们的订单表。订单保存在这台设备上，直到你复制它。</p>
+    </header>
+    <div class="builder">
+      <form class="ticket" id="builder-form" novalidate>
+        <p class="ticket__label">工单</p>
+        <fieldset class="stage" id="stage-piece"><legend><b>01</b> 商品</legend><div class="chips chips--pieces" id="item-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>02</b> 颜色</legend><div class="chips chips--drops" id="color-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>03</b> 位置</legend><div class="chips" id="place-chips"></div></fieldset>
+        <fieldset class="stage"><legend><b>04</b> 数量</legend><div class="chips chips--qty" id="qty-chips"></div><p class="tally" id="tally" title="一笔 = 一个起订量"></p></fieldset>
+        <div class="stage"><label class="stage__label" for="art-note"><b>05</b> 图案说明</label><textarea id="art-note" rows="3" maxlength="240" placeholder="你的标志，单色。图案文件在订单表之后发送。"></textarea></div>
+        <p class="ticket__actions"><button class="button button--go" type="submit" id="add-button">加入订单</button> <button class="button button--tape" type="button" id="clear-button">重新开始</button></p>
+        <p class="saved" id="saved" role="status" aria-live="polite"></p>
+      </form>
+
+      <figure class="proof" aria-labelledby="proof-caption">
+        <p class="proof__label">打样 · 示意图 · 未确认</p>
+        <div class="proof__art" id="proof"></div>
+        <figcaption id="proof-caption"></figcaption>
+        <p class="proof__note" id="proof-note"></p>
+      </figure>
+
+      <div class="sheet" id="sheet" aria-live="polite">
+        <header><h3>你的订单</h3><span class="sheet__tag" id="sheet-tag">空</span></header>
+        <ul class="sheet-lines" id="sheet-lines"></ul>
+        <p class="sheet__empty" id="sheet-empty">工单上还没有东西。添加一件，它会出现在这里。</p>
+        <dl class="totals" id="totals" hidden>
+          <div><dt>件数</dt><dd id="total-pieces">0</dd></div>
+          <div><dt>工坊</dt><dd id="total-partners">0</dd></div>
+          <div><dt>生产周期</dt><dd id="total-window">–</dd></div>
+          <div><dt>价格</dt><dd>按单报价</dd></div>
+        </dl>
+        <p class="sheet__actions">
+          <button class="button button--tape" type="button" id="copy-button">复制订单表</button>
+          <a class="button button--go" id="email-button" href="mailto:hello@vibeshit.co">用邮件发送订单表</a>
+          <button class="button button--tape" type="button" id="link-button">复制链接</button>
+        </p>
+        <p class="saved" id="sheet-status" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
 
-  <section id="how">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>一张订单怎么走</h2>
-        <p>不需要销售电话。订单表就是全部沟通。</p>
-      </div>
-      <div class="steps">
-        <div class="step"><h3>挑选单品</h3><p>从三条线里拼出订单表：颜色、数量、图案放在哪里。</p></div>
-        <div class="step"><h3>我们分派产线</h3><p>每条线带着尺码配比和图案文件，交给各自的合作方。</p></div>
-        <div class="step"><h3>一天内出样</h3><p>每件带装饰的单品都会回一张数字制版确认。你点头之前不生产。</p></div>
-        <div class="step"><h3>生产，然后发货</h3><p>确认后开始生产。箱子从合作方发出，不经过我们的仓库。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="landfill" class="landfill">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">为什么叫这个名字</p>
-        <h2>玩笑在名字里。问题在垃圾堆里。</h2>
-        <p>大部分品牌周边都是成批订、发一次、戴一周。剩下的先躺在抽屉里，再进垃圾桶——而垃圾桶是行业从不写进报价单的那一项。我们干脆把公司取成这个名字，谁都不用假装。</p>
-        <p class="note">我们不宣称碳中和。我们只宣称：少做一些没人想要的东西。</p>
-      </div>
-      <div>
-        <ul>
-          <li><b>下单后才做</b>没有库存躺在仓库里，等一场被取消的会议。</li>
-          <li><b>起订量小</b>12 件起。先做一批试点，好过订一整托后悔。</li>
-          <li><b>让人留着的东西</b>值得用两次的单品：真刺绣、烤漆、环纺棉。</li>
-          <li><b>能不用塑料就不用</b>默认纸包装和纸箱；合作方会说明你的产品线能做到什么。</li>
-          <li><b>寄回来，我们收</b>一轮里没用的单品回到合作方重做，不进军垃圾场。</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="build">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>生成一张订单表</h2>
-        <p>本页不报价、不收款：它只生成你发给我们的订单表。你的订单留在这台设备上，直到你复制它。</p>
-      </div>
-      <div class="builder">
-        <form class="panel" id="builder-form" novalidate>
-          <h3>添加单品</h3>
-          <p class="hint">选一条产品线、一个颜色和一个数量，订单表会算出这一轮。</p>
-
-          <div class="field">
-            <span class="label" id="item-label">单品</span>
-            <div class="chips" id="item-chips" role="group" aria-labelledby="item-label"></div>
-          </div>
-
-          <div class="field">
-            <span class="label" id="color-label">颜色</span>
-            <div class="swatches" id="color-chips" role="group" aria-labelledby="color-label"></div>
-          </div>
-
-          <div class="field">
-            <span class="label" id="qty-label">数量</span>
-            <div class="chips" id="qty-chips" role="group" aria-labelledby="qty-label"></div>
-          </div>
-
-          <div class="field">
-            <label class="label" for="art-note">图案与位置</label>
-            <textarea id="art-note" placeholder="你的标志，左胸，单色；图案文件在订单表之后发来。"></textarea>
-          </div>
-
-          <div class="builder-actions">
-            <button class="button button--signal" type="submit" id="add-button">加入订单</button>
-            <button class="button button--ghost" type="button" id="clear-button">重新开始</button>
-          </div>
-          <p class="saved" id="saved" role="status" aria-live="polite"></p>
-        </form>
-
-        <div class="panel sheet" id="sheet" aria-live="polite">
-          <header><h3>你的订单</h3><span class="tag" id="sheet-tag">空</span></header>
-          <ul class="sheet-lines" id="sheet-lines"></ul>
-          <p class="empty" id="sheet-empty">还没有单品。在左边添加一件，它会出现在这里。</p>
-          <div class="totals" id="totals" hidden>
-            <div><span>件数</span><strong id="total-pieces">0</strong></div>
-            <div><span>合作方</span><strong id="total-partners">0</strong></div>
-            <div><span>生产周期</span><strong id="total-window">–</strong></div>
-            <div><span>价格</span><strong>按单报价</strong></div>
-          </div>
-          <div class="sheet-actions">
-            <button class="button button--ghost" type="button" id="copy-button">复制订单表</button>
-            <a class="button button--signal" id="email-button" href="mailto:hello@vibeshit.co">邮件发送订单表</a>
-            <button class="button button--ghost" type="button" id="link-button">复制链接</button>
-          </div>
-          <p class="saved" id="sheet-status" role="status" aria-live="polite"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <div class="section-head"><h2>大家真的会问的问题</h2></div>
-      <div class="faq">
-        <details>
-          <summary>为什么叫 VibeShit？</summary>
-          <p>因为大部分周边最后就是这个样子。这个名字让我们保持诚实：一件不值得用两次的单品，我们就不该做。我们是一家真的周边公司：标志是玩笑，生产不是。</p>
-        </details>
-        <details>
-          <summary>最小起订量是多少？</summary>
-          <p>棒球帽、针织帽、T 恤和连帽衫 12 件；徽章、钥匙扣和贴纸包 25 件。每条线有自己的合作方和起订量，卡片上写着。</p>
-        </details>
-        <details>
-          <summary>多少钱？</summary>
-          <p>我们按单报价：数量、颜色、工艺和合作方当下的费率决定价格。把订单表发来，你会收到一份带生产周期的报价，而不是一张会过期的价目表。</p>
-        </details>
-        <details>
-          <summary>可以先看样品吗？</summary>
-          <p>可以。任意一条线的单件素品会先寄出；如果订单继续，这笔费用从订单里扣掉。</p>
-        </details>
-        <details>
-          <summary>要多久？</summary>
-          <p>帽子 14–18 天，小物 18–24 天，衣物在确认后 10–14 天。混合订单按最长周期发出，由各合作方分批发货。</p>
-        </details>
-        <details>
-          <summary>寄到美国以外吗？</summary>
-          <p>寄。每个合作方单独报运费；在确认任何事之前，订单表会先写明目的地。</p>
-        </details>
-      </div>
-    </div>
+  <section id="faq" class="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">大家真正会问的问题</h2>
+    <details>
+      <summary>为什么叫 VibeShit？</summary>
+      <p>因为大多数周边最后都成了这个。这个名字让我们保持诚实：一件东西不值得穿第二次，我们就不该做。标志是玩笑，生产不是。</p>
+    </details>
+    <details>
+      <summary>最小起订量是多少？</summary>
+      <p>帽子、针织帽、T 恤和连帽衫 12 件；徽章和钥匙扣 25 件；贴纸包 50 件。每条线有自己的工坊和起订量。</p>
+    </details>
+    <details>
+      <summary>价格是多少？</summary>
+      <p>每单单独报价：数量、颜色、工艺和工坊当前的价格决定它。发来订单表，你会收到一份带生产周期的报价，而不是一张会过期的价目表。</p>
+    </details>
+    <details>
+      <summary>可以先看样品吗？</summary>
+      <p>可以。任何产品线都可以先寄一件素色样品，如果正式下单，样品费用从订单中扣除。</p>
+    </details>
+    <details>
+      <summary>需要多长时间？</summary>
+      <p>打样确认后：帽子 14–18 天，小物 10–24 天，衣物 10–16 天。混合订单按最长周期，从各工坊分批发货。</p>
+    </details>
+    <details>
+      <summary>可以寄到美国以外吗？</summary>
+      <p>可以。每家工坊单独报运费；确认之前，订单表会写明目的地。</p>
+    </details>
+    <details>
+      <summary>页面上的图是真实商品吗？</summary>
+      <p>不是。贴纸和打样都是为这个页面画的示意图。你的打样由工坊根据你的图案绘制。</p>
+    </details>
   </section>
 
 </main>
 
-<footer class="site">
-  <div class="wrap">
-    <div class="who">
-      <p><strong>VibeShit</strong> — 按订单生产的促销周边与赠品。CommandAGI 旗下公司。</p>
-      <p class="fine">订单表在这台设备上生成。本页不收款，也不会把任何内容发送给我们；托管方只统计一次访问。</p>
-    </div>
-    <div class="links">
-      <a href="mailto:hello@vibeshit.co">hello@vibeshit.co</a>
-      <a href="#build">生成订单表</a>
-      <a href="../" hreflang="en">English</a>
-      <a href="../es/" hreflang="es">Español</a>
-      <span class="fine">vibeshit.co</span>
-    </div>
+<footer class="foot">
+  <img class="foot__mark" src="../wordmark.svg" alt="" width="603" height="132">
+  <div class="foot__who">
+    <p><strong>VibeShit</strong> — 按订单生产的促销周边与赠品。CommandAGI 旗下公司。</p>
+    <p class="fine">订单表在这台设备上生成。这个页面不收款，也不向我们发送任何东西；我们的托管方会统计一次页面访问。</p>
   </div>
+  <p class="foot__links">
+    <a href="mailto:hello@vibeshit.co">hello@vibeshit.co</a>
+    <a href="#build">开一单</a>
+    <a href="../" hreflang="en" lang="en">English</a>
+    <a href="../es/" hreflang="es" lang="es">Español</a>
+    <span class="fine">vibeshit.co</span>
+  </p>
 </footer>
 
-<script src="../app.js" defer></script>
+<script type="module" src="../app.js"></script>
 </body>
 </html>

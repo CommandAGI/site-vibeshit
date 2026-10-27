@@ -66,7 +66,7 @@ test('every relative link and asset of every page exists', () => {
 });
 
 test('no page or script reaches another origin', () => {
-  const files = [...Object.values(LOCALES), 'app.js', 'style.css', 'mark.svg'];
+  const files = [...Object.values(LOCALES), 'app.js', 'catalog.js', 'style.css', 'mark.svg', 'wordmark.svg'];
   for (const path of files) {
     const text = read(path);
     for (const match of text.matchAll(/(?:src|href)="(https?:\/\/[^"]+)"/g)) {
@@ -88,7 +88,7 @@ test('no page or script reaches another origin', () => {
 });
 
 test('the catalog carries every locale, and every piece names a line, a minimum and a window', () => {
-  const js = read('app.js');
+  const js = read('catalog.js') + read('app.js');
   const items = [...js.matchAll(/id: '([a-z]+)', line: '([a-z]+)', days: \[(\d+), (\d+)\], min: (\d+)/g)];
   assert.ok(items.length >= 6, 'at least six pieces across the three lines');
   for (const [, id, line, low, high, min] of items) {
@@ -117,5 +117,27 @@ test('the order sheet is the only thing that leaves the page, and it leaves by t
   assert.ok(!/\$\s?\d/.test(js), 'the page shows no price: a run is quoted by a person');
   for (const path of Object.values(LOCALES)) {
     assert.ok(read(path).includes('Quoted per run') || read(path).includes('Se cotiza por pedido') || read(path).includes('按单报价'), `${path} says the price is quoted, not listed`);
+  }
+});
+
+test('every piece can be placed, and a run line carries its placement to the sheet the shops read', async () => {
+  const { ITEMS, PLACES, COLORS, DRAWINGS } = await import('../catalog.js');
+  for (const item of ITEMS) {
+    assert.ok(item.places.length > 0, `${item.id} has somewhere for the art`);
+    for (const place of item.places) assert.ok(PLACES[place], `${item.id}: ${place} is a placement`);
+    for (const color of item.colors) assert.ok(COLORS[color], `${item.id}: ${color} is a colourway`);
+    assert.ok(DRAWINGS[item.id], `${item.id} is drawn for the pile, the chips and the proof`);
+  }
+  const js = read('app.js');
+  assert.match(js, /PLACES\[line\.place\]\?\.en/, 'the copied sheet names the placement in English');
+  assert.match(js, /item\.places\.includes\(line\.place\)/, 'a link from elsewhere cannot carry a placement the piece does not have');
+});
+
+test('the pile has a keyboard list, and the proof says it is a drawing', () => {
+  for (const [locale, path] of Object.entries(LOCALES)) {
+    const html = read(path);
+    assert.match(html, /id="pile" aria-hidden="true"/, `${locale}: the pile is decoration`);
+    assert.equal((html.match(/data-pick="/g) ?? []).length, 7, `${locale}: every piece is a button in the set list`);
+    assert.match(html, /class="proof__label"/, `${locale}: the proof is labelled illustrative`);
   }
 });
